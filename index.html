@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>FindTheWeather</title>
+</head>
+<body>  
+    <div style="text-align: center; padding: 50px;">
+
+        <div class="form-group">
+            <span>city name</span>
+            <input class="form-field" type="text" id="name" placeholder="eq: London">
+        </div>
+        <!-- <div>
+            <input id='submit' type="submit" value="Search" onclick="getDegrees()">
+        </div> -->
+
+        <div class="box">
+            <a href="#" class="btn btn-white btn-animation-1" onclick="getDegrees()">Get Weather</a> 
+        </div>
+        
+        <h3 id='text'></h3>
+        <h1 id='degrees'></h1>
+        <span id="celsius" style="opacity: 0;"> <strong id="cel">°C</strong></span>
+        <h3 id="main"></h3>
+    </div>  
+
+    <script src="script.js"></script>
+</body>
+</html>
