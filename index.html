@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=News+Cycle:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ecd700c6e4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/styles.css">
     <title>FindTheWeather</title>
 </head>
 <body>  
-    <div style="text-align: center; padding: 50px;">
-
+    <div style="text-align: center; padding: 50px; margin-top: 20px;">
         <div class="form-group">
             <span>city name</span>
-            <input class="form-field" type="text" id="name" placeholder="eq: London">
+            <input class="form-field" type="text" id="name" placeholder="eq: London" onfocus="this.value=''" value="">
         </div>
         <!-- <div>
             <input id='submit' type="submit" value="Search" onclick="getDegrees()">
@@ -24,10 +24,26 @@
         
         <h3 id='text'></h3>
         <h1 id='degrees'></h1>
+
+        <span id="weatherIcon"> </span>
+        
+        <span id="cloud" style="display: none;"> <i class="fas fa-cloud"></i> </span>
+
+        <span id="sun" style="display: none;"> <i class="fas fa-sun"></i> </span>
+
+        <span id="cloud-rain" style="display: none;"> <i class="fas fa-cloud-rain"></i> </span>
+        <!-- <span id="cloud-sun" style="display: none;"> <i class="fas fa-cloud-sun"></i> </span>
+        <span id="cloud-sun-rain" style="display: none;"> <i class="fas fa-cloud-sun-rain"></i> </span>
+        <span id="cloud-showers-heavy" style="display: none;"> <i class="fas fa-cloud-showers-heavy"></i> </span> -->
+        
+
         <span id="celsius" style="opacity: 0;"> <strong id="cel">°C</strong></span>
-        <h3 id="main"></h3>
+        <h3 id="main" style="opacity: 0;"></h3>
+
+
     </div>  
 
-    <script src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>    
 </body>
 </html>
