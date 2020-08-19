@@ -54,7 +54,6 @@ function getDegrees() {
     .then(result => 
           {$('#text').html(result.name + ", " + result.sys.country);
           $('#degrees').html((result.main.temp - 273.15).toFixed(1) + document.getElementById('celsius').innerHTML);
-          // $('#main').html(result.weather[0].main);
 
           $('#degrees').css({opacity: 1});
           $('#text').css({opacity: 1});
@@ -78,16 +77,6 @@ function getDegrees() {
     }
 
   });
-
-// $(function(){
-//   $('.btn').on('click', function(){
-//     $('#degrees').show().css({opacity: 1}).fadeIn(1100);
-//     $('#text').fadeIn(1000);
-//     $('#main').toggle(1000);
-
-//     $('degrees').addClass('invisible');
-//   })
-// });
 
 function findMe(){
   if (navigator.geolocation) {
