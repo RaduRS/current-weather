@@ -16,6 +16,7 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  cursor: pointer;
 }
 
 html .form-group, body .form-group {
@@ -32,7 +33,6 @@ h1 {
   font-weight: 100;
   margin-left: -30px;
   margin-top: -30px;
-  cursor: pointer;
   opacity: 0;
   -webkit-transition: opacity ease-in 1s;
   transition: opacity ease-in 1s;
@@ -42,7 +42,6 @@ h3 {
   font-size: 1.5em;
   margin: 20px;
   font-weight: 100;
-  cursor: pointer;
   opacity: 0;
   -webkit-transition: opacity ease-in 1s;
   transition: opacity ease-in 1s;
@@ -66,12 +65,16 @@ h3 {
   margin-right: 10px;
 }
 
+.fa-map-marker-alt {
+  margin: 0;
+  padding: 0;
+}
+
 #cel {
   font-size: 0.4em;
   position: absolute;
   margin-top: 25px;
   margin-left: 10px;
-  cursor: pointer;
 }
 
 :root {
@@ -190,6 +193,12 @@ h3 {
   border-color: var(--group-border-focus);
 }
 
+.form-group:focus-within > button {
+  color: var(--group-color-focus);
+  background: var(--group-background-focus);
+  border-color: var(--group-border-focus);
+}
+
 html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -204,6 +213,28 @@ html {
 *:before, *:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
+}
+
+.findMe {
+  padding: 0;
+  -webkit-box-flex: 0 !important;
+      -ms-flex: none !important;
+          flex: none !important;
+  width: 30px !important;
+  border-left: none;
+  cursor: pointer;
+}
+
+.fa-cloud {
+  color: #7dcae9;
+}
+
+.fa-sun {
+  color: #e9be44;
+}
+
+.fa-cloud-rain {
+  color: #2b6292;
 }
 
 .box {

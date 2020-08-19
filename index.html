@@ -11,8 +11,11 @@
 <body>  
     <div style="text-align: center; padding: 50px; margin-top: 20px;">
         <div class="form-group">
-            <span>city name</span>
-            <input class="form-field" type="text" id="name" placeholder="eq: London" onfocus="this.value=''" value="">
+            <span id="cityName">city name</span>
+            <input class="form-field" type="text" id="name" placeholder="eq: London" onfocus="this.value=''" value="" >
+            <button class="form-field findMe" id="findMe" onclick="findMe()">
+                    <i class="fas fa-map-marker-alt"></i>
+            </button>
         </div>
         <!-- <div>
             <input id='submit' type="submit" value="Search" onclick="getDegrees()">
