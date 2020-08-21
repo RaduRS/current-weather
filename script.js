@@ -1,7 +1,7 @@
 function getDegrees() {
     var cityName = document.getElementById('name').value;
  
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
     .then(response =>
       {
         if (!response.ok) {
@@ -32,7 +32,7 @@ function getDegrees() {
         else if(result.weather[0].main === 'Rain'){
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-rain').innerHTML + result.weather[0].main
         } else {
-          document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud').innerHTML + result.weather[0].main
+          document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
         } 
 }
 )
@@ -42,7 +42,7 @@ function getDegrees() {
     document.getElementById('name').addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
       var cityName = document.getElementById('name').value;
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
     .then(response =>
       {
         if (!response.ok) {
@@ -70,7 +70,7 @@ function getDegrees() {
           else if(result.weather[0].main === 'Rain'){
             document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-rain').innerHTML + result.weather[0].main
           } else {
-            document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud').innerHTML + result.weather[0].main
+            document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
           }
       }
   )
@@ -87,7 +87,7 @@ function findMe(){
     var lat = position.coords.latitude;
     var long = position.coords.longitude;
   
-    fetch(`http://www.mapquestapi.com/geocoding/v1/reverse?key=wm1hiYIIs24GtbqO0p4QSl8MufOIBPDe&location=${lat},${long}`)
+    fetch(`https://www.mapquestapi.com/geocoding/v1/reverse?key=wm1hiYIIs24GtbqO0p4QSl8MufOIBPDe&location=${lat},${long}`)
     .then(response =>
       {
         if (!response.ok) {
@@ -98,7 +98,7 @@ function findMe(){
       })
     .then(result =>  
       
-    fetch(`http://api.openweathermap.org/data/2.5/weather?q=${result.results[0].locations[0].adminArea5}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${result.results[0].locations[0].adminArea5}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
     .then(response => response.json())
     .then(result => 
         {$('#text').html(result.name + ", " + result.sys.country);
@@ -119,7 +119,7 @@ function findMe(){
         else if(result.weather[0].main === 'Rain'){
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-rain').innerHTML + result.weather[0].main
         } else {
-          document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud').innerHTML + result.weather[0].main
+          document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
         } 
   }
   )
