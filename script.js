@@ -132,11 +132,7 @@ function findMe(){
   //Get latitude and longitude;
   function successFunction(position) {
     var lat = position.coords.latitude;
-    var long = position.coords.longitude;
-
-    console.log(lat);
-    console.log(long);
-    
+    var long = position.coords.longitude; 
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
     .then(response =>

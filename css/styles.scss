@@ -55,8 +55,9 @@ h4{
     text-align: center;
     flex-wrap: wrap;
     padding-top: 20px;
-    opacity: 0;
 }
+
+
 
 #min, #max{
     padding: 0;
@@ -178,7 +179,6 @@ h4{
         // width: 100%;
         margin-top: 0;
         margin-bottom: 0;
-        transition: all ease-in 1s;
     }
     & > span {
         text-align: center;
