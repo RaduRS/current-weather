@@ -31,6 +31,9 @@ function getDegrees() {
         }
         else if(result.weather[0].main === 'Rain'){
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-rain').innerHTML + result.weather[0].main
+        }
+        else if(result.weather[0].main === 'Snow'){
+          document.getElementById('weatherIcon').innerHTML = document.getElementById('snowflake').innerHTML + result.weather[0].main
         } else {
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
         } 
@@ -69,6 +72,9 @@ function getDegrees() {
           }
           else if(result.weather[0].main === 'Rain'){
             document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-rain').innerHTML + result.weather[0].main
+          }
+          else if(result.weather[0].main === 'Snow'){
+            document.getElementById('weatherIcon').innerHTML = document.getElementById('snowflake').innerHTML + result.weather[0].main
           } else {
             document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
           }
@@ -85,7 +91,7 @@ function findMe(){
   //Get latitude and longitude;
   function successFunction(position) {
     var lat = position.coords.latitude;
-    var long = position.coords.longitude;
+    var long = position.coords.longitude;  
   
     fetch(`https://www.mapquestapi.com/geocoding/v1/reverse?key=wm1hiYIIs24GtbqO0p4QSl8MufOIBPDe&location=${lat},${long}`)
     .then(response =>
@@ -118,7 +124,11 @@ function findMe(){
         }
         else if(result.weather[0].main === 'Rain'){
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-rain').innerHTML + result.weather[0].main
-        } else {
+        } 
+        else if(result.weather[0].main === 'Snow'){
+          document.getElementById('weatherIcon').innerHTML = document.getElementById('snowflake').innerHTML + result.weather[0].main
+        } 
+        else {
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
         } 
   }
