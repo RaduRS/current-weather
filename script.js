@@ -14,12 +14,17 @@ function getDegrees() {
         {$('#text').html(result.name + ", " + result.sys.country);
         $('#degrees').html((result.main.temp - 273.15).toFixed(1) + document.getElementById('celsius').innerHTML);
 
-
         $('#degrees').css({opacity: 1});
         $('#text').css({opacity: 1});
         $('#main').css({opacity: 1});
 
         $('#weatherIcon').css({opacity: 1});
+        $('#feels').css({opacity: 1});
+        $('#humidity').css({opacity: 1});
+        $('#wind').css({opacity: 1});
+        $('#min').css({opacity: 1});
+        $('#max').css({opacity: 1});
+        $('#group').css({opacity: 1});
 
         // Math.round(result.main.temp * 0.1)
 
@@ -37,6 +42,21 @@ function getDegrees() {
         } else {
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
         } 
+
+        $('#feels').html('Feels like: ' + (result.main.feels_like - 273.15).toFixed(1) + ' °C');
+        $('#humidity').html('Humidity: ' + result.main.humidity + "%");
+        $('#wind').html('Wind: ' + (result.wind.speed * 3.6).toFixed(0) + ' km/h');
+
+
+        var long = result.coord.lon;
+        var lat = result.coord.lat;
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+        .then(response => response.json())
+        .then(result => {
+          $('#min').html(document.getElementById('minImg').innerHTML + (result.daily[0].temp.min - 273.15).toFixed(1) + ' °C');
+          $('#max').html(document.getElementById('maxImg').innerHTML + (result.daily[0].temp.max - 273.15).toFixed(1) + ' °C')
+        })
 }
 )
   }
@@ -61,6 +81,12 @@ function getDegrees() {
           $('#degrees').css({opacity: 1});
           $('#text').css({opacity: 1});
           $('#main').css({opacity: 1});
+          $('#feels').css({opacity: 1});
+          $('#humidity').css({opacity: 1});
+          $('#wind').css({opacity: 1});
+          $('#min').css({opacity: 1});
+          $('#max').css({opacity: 1});
+          $('#group').css({opacity: 1});
 
           $('#weatherIcon').css({opacity: 1});
 
@@ -78,6 +104,21 @@ function getDegrees() {
           } else {
             document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
           }
+
+
+          $('#feels').html('Feels like: ' + (result.main.feels_like - 273.15).toFixed(1) + ' °C');
+          $('#humidity').html('Humidity: ' + result.main.humidity + "%");
+          $('#wind').html('Wind: ' + (result.wind.speed * 3.6).toFixed(0) + ' km/h');
+
+          var long = result.coord.lon;
+          var lat = result.coord.lat;
+  
+          fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+          .then(response => response.json())
+          .then(result => {
+            $('#min').html(document.getElementById('minImg').innerHTML + (result.daily[0].temp.min - 273.15).toFixed(1) + ' °C');
+            $('#max').html(document.getElementById('maxImg').innerHTML + (result.daily[0].temp.max - 273.15).toFixed(1) + ' °C')
+          })
       }
   )
     }
@@ -91,9 +132,13 @@ function findMe(){
   //Get latitude and longitude;
   function successFunction(position) {
     var lat = position.coords.latitude;
-    var long = position.coords.longitude;  
-  
-    fetch(`https://www.mapquestapi.com/geocoding/v1/reverse?key=wm1hiYIIs24GtbqO0p4QSl8MufOIBPDe&location=${lat},${long}`)
+    var long = position.coords.longitude;
+
+    console.log(lat);
+    console.log(long);
+    
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
     .then(response =>
       {
         if (!response.ok) {
@@ -104,7 +149,7 @@ function findMe(){
       })
     .then(result =>  
       
-    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${result.results[0].locations[0].adminArea5}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${result.name}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
     .then(response => response.json())
     .then(result => 
         {$('#text').html(result.name + ", " + result.sys.country);
@@ -113,6 +158,12 @@ function findMe(){
         $('#degrees').css({opacity: 1});
         $('#text').css({opacity: 1});
         $('#main').css({opacity: 1});
+        $('#feels').css({opacity: 1});
+        $('#humidity').css({opacity: 1});
+        $('#wind').css({opacity: 1});
+        $('#min').css({opacity: 1});
+        $('#max').css({opacity: 1});
+        $('#group').css({opacity: 1});
   
         $('#weatherIcon').css({opacity: 1});
   
@@ -131,6 +182,22 @@ function findMe(){
         else {
           document.getElementById('weatherIcon').innerHTML = document.getElementById('cloud-showers-heavy').innerHTML + result.weather[0].main
         } 
+
+
+        $('#feels').html('Feels like: ' + (result.main.feels_like - 273.15).toFixed(1) + ' °C');
+        $('#humidity').html('Humidity: ' + result.main.humidity + "%");
+        $('#wind').html('Wind: ' + (result.wind.speed * 3.6).toFixed(0) + ' km/h');
+
+
+        var long = result.coord.lon;
+        var lat = result.coord.lat;
+
+        fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${long}&appid=c7c0bbfad9af091a116987cdc3cde6e5`)
+        .then(response => response.json())
+        .then(result => {
+          $('#min').html(document.getElementById('minImg').innerHTML + (result.daily[0].temp.min - 273.15).toFixed(1) + ' °C');
+          $('#max').html(document.getElementById('maxImg').innerHTML + (result.daily[0].temp.max - 273.15).toFixed(1) + ' °C')
+        })
   }
   )
 

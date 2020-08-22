@@ -19,10 +19,6 @@ html, body {
   cursor: pointer;
 }
 
-html .form-group, body .form-group {
-  max-width: 360px;
-}
-
 html .form-group:not(:last-child), body .form-group:not(:last-child) {
   margin-bottom: 32px;
 }
@@ -45,6 +41,58 @@ h3 {
   opacity: 0;
   -webkit-transition: opacity ease-in 1s;
   transition: opacity ease-in 1s;
+}
+
+h4 {
+  font-size: 1em;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  font-family: 'News Cycle', sans-serif;
+  display: inline-block;
+  font-weight: 100;
+  padding: 0px 20px;
+}
+
+#group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-item-align: center;
+      align-self: center;
+  text-align: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding-top: 20px;
+  opacity: 0;
+}
+
+#min, #max {
+  padding: 0;
+  margin: 0;
+}
+
+#min img, #max img {
+  position: relative;
+  top: 10px;
+  right: 10px;
+}
+
+#min img, #max img {
+  width: 15%;
+}
+
+#minmax {
+  padding-top: 30px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 #weatherIcon {
@@ -93,7 +141,6 @@ h3 {
 
 .form-field {
   display: block;
-  width: 100%;
   padding: 8px 16px;
   line-height: 25px;
   font-size: 14px;
@@ -134,6 +181,9 @@ h3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 100%;
 }
 
@@ -166,12 +216,10 @@ h3 {
 .form-group .form-field {
   position: relative;
   z-index: 1;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 auto;
-          flex: 1 1 auto;
-  width: 1%;
   margin-top: 0;
   margin-bottom: 0;
+  -webkit-transition: all ease-in 1s;
+  transition: all ease-in 1s;
 }
 
 .form-group > span {
