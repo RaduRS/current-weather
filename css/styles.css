@@ -16,7 +16,6 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  cursor: pointer;
 }
 
 html .form-group:not(:last-child), body .form-group:not(:last-child) {
